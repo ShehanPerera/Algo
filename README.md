@@ -47,7 +47,7 @@ Add algo-1.0-SNAPSHOT.jar to project structure, then Algo can use as follows
  
 * For Data structure : `import com.github.datastructures.*;`
  
-* For Statr Metrics server
+* For Start Metrics server
    
  ```
  import com.github.metrics.MetricsServer;
