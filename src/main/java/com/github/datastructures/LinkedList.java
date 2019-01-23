@@ -24,13 +24,13 @@ package com.github.datastructures;
  * @version 1.0
  * @since 2018/07/12
  */
-public class LinkedList {
+public class LinkedList<T> {
 
 	/**
 	 * Implimentation of the Node class for the Linked List. Here its only have numerical data called key.
 	 */
 	public class Node {
-		private int key;
+		private T key;
 		public Node next;
 
 		/**
@@ -38,7 +38,7 @@ public class LinkedList {
 		 * Key is going to be 0 and next node going to be null.
 		 */
 		public Node() {
-			this.key = 0;
+			this.key = null;
 			this.next = null;
 		}
 
@@ -46,7 +46,7 @@ public class LinkedList {
 		 * Constructor with ony value parameter
 		 * @param value (For key)
 		 */
-		public Node(int value) {
+		public Node(T value) {
 			this.key = value;
 			this.next = null;
 		}
@@ -56,7 +56,7 @@ public class LinkedList {
 		 * @param value (For key)
 		 * @param nxt (For next)
 		 */
-		public Node(int value, Node nxt) {
+		public Node(T value, Node nxt) {
 			this.key = value;
 			this.next = nxt;
 		}
@@ -65,7 +65,7 @@ public class LinkedList {
 		 * Function to return the key value of the particular Node.
 		 * @return the key of the Node
 		 */
-		public int getKey() {
+		public T getKey() {
 			return key;
 		}
 
@@ -73,7 +73,7 @@ public class LinkedList {
 		 * Function to set the key of the Node.
 		 * @param key
 		 */
-		public void setKey(int key) {
+		public void setKey(T key) {
 			this.key = key;
 		}
 	}
@@ -120,7 +120,7 @@ public class LinkedList {
 	 * add Node to start.
 	 * @param value to set start Node's key.
 	 */
-	public void addStart(int value) {
+	public void addStart(T value) {
 		Node temp = new Node(value);
 		if(this.start == null) {
 			this.start = temp;
@@ -134,7 +134,7 @@ public class LinkedList {
 	 * Add node to end of the linkedList.
 	 * @param value to set last Node's Value
 	 */
-	public void addLast(int value) {
+	public void addLast(T value) {
 		Node temp = new Node(value);
 		if(this.start == null) {
 			this.start = temp;
@@ -154,7 +154,7 @@ public class LinkedList {
 	 * @param pos position of the Node that you want to put your new Node after.
 	 * @param value Value of the new node
 	 */
-	public void insertAfter(int pos, int value) {
+	public void insertAfter(int pos, T value) {
 		Node now = this.start;
 		int c=0;
 		Node temp = new Node(value);
@@ -175,7 +175,7 @@ public class LinkedList {
 	 * @param pos position of new node
 	 * @param value key of the new Node,s key
 	 */
-	public void insertAt(int pos, int value) {
+	public void insertAt(int pos, T value) {
 		Node now = this.start;
 		int c=1;
 		Node temp = new Node(value);
